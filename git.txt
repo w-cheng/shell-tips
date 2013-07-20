@@ -1,0 +1,22 @@
+* create a repository to be shared in a group
+	$ git init --bare --shared=group <repository>
+	$ chown -R <user>:<group> <repository>
+
+* clone a local repository
+	$ git clone /<path>/<repository> [optional new repository name]
+
+* clone a repository over ssh
+	$ git clone <username>@<host>:<path>/<repository> [optional new repository name]
+
+* basic config after cloning
+	$ git config user.name "<your name>"
+	$ git config user.email "<your email>"
+	$ git config --add push.default tracking
+
+* change an existing repository to a group shared one
+	$ umask 002
+	$ sudo chown -R <user>:<group> <path>/<repository>
+	$ chmod -R g+w <path>/<repository>
+	$ find <path>/<repository> -type d -exec chmod g+s '{}' \;
+	$ cd <path>/<repository>
+	$ git config core.sharedRepository group

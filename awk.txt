@@ -1,0 +1,31 @@
+* change field separator
+	$ awk -F',' '{print $1, $2}' <file> (use , as field separator)
+
+* change output field separator
+	$ awk 'BEGIN{OFS="-"}{print $1,$2}' <file> (use - as output field separator)
+	example: input(1 2), output(1-2)
+
+* use length as field separator
+	$ awk 'BEGIN{FIELDWIDTHS="4 7"}{print $1,$2}' <file> (use the first 4 characters as the first field and the next 7 as the second fields)
+	example: input(01142301111), output(0114 2301111)
+
+* match records anywhere against a regex pattern
+	$ awk '/pattern/{print $1}' <file>
+
+* match a specific data field against a regex pattern
+	$ awk '$2~/pattern/{print $0}' <file>
+
+* compare a specific data field against a number or string
+	$ awk '$2 >= 5{print $0}' <file>
+	$ awk '$2 =="Smith"{print $0}' <file>
+
+* commonly used built-in variables
+	FIELDWIDTHS - A space separated list of numbers defining the exact width (in characters) of each data field.
+	FS          - Input field separator character
+	RS          - Input record separator character
+	OFS         - Output field separator character
+	ORS         - Output record separator character
+	FNR         - The total number of data fields in current record
+	NR          - The number of input records processed
+	$0          - The entire line
+	ENVIRON     - An associative array of the current shell environment variables and their values

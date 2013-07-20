@@ -1,0 +1,54 @@
+* Show index view of a list of images
+	$ feh -i -f <image_file_list>
+
+* Mirror a remote directory
+	$ rsync -avz --delete -e ssh weiwei@gmother.sopty.net:/leifeng/sopty_site sopty_site
+
+* Mirror a local directory
+	$ rsync -avz --delete <src dir> <dest dir>
+
+* Extract information using XPath
+	$ xidel <file|url> -e '//a/@href'url# extract all links of a html page
+ 
+* Download a list of urls to disk for offline viewing
+	$ wget -N -p -k --random-wait -i <url list> -o <log file>
+
+* Balance spacing of textual table
+	$ column -t <file>
+
+* Split a file by N lines
+	$ split -d -l 10 <file> <output file prefix># split file by 10 lines, the output file will be called prefix01, prefix02...
+
+* Resize an image to not exceed specified size, shrink if necessary
+	$ convert <image file> -resize ‘widthxheight>’ <resized image file>
+
+* Change image format
+	$ convert <image.jpg> <image.png>
+
+* Show basic image information
+	$ identify <image file>
+
+* List files in tar.gz/tar archives
+	$ tar -tf <file.tar>
+	$ tar -tzf <file.tar.gz>
+
+* Copy the first n files to another place
+	$ find <dir> -type f | head -n <N>|xargs cp -t <dest>
+
+* Get file extension and name
+	filename=$(basename "$fullfile")
+	extension="${filename##*.}"
+	filename="${filename%.*}"
+
+* Update an alternative command
+	$ sudo update-alternatives --config <command>
+
+* Ubuntu/Debian application installation folder
+	/usr/bin/<app>app 	# binary
+	/usr/share/<app> 	# installation folder
+	/etc/<app>app 		# configuration files
+
+* Get the lines between two matching patterns
+	$ sed -n ‘/start_pattern/, /end_pattern/ p’ <text file>
+
+
