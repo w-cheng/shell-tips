@@ -11,9 +11,16 @@
 
 * match records anywhere against a regex pattern
 	$ awk '/pattern/{print $1}' <file>
+	$ awk '!/pattern/{print $1}' <file> (reverse matching)
 
 * match a specific data field against a regex pattern
 	$ awk '$2~/pattern/{print $0}' <file>
+	$ awk '$2!~/pattern/{print $0}' <file> (reverse matching)
+
+* match multiple patterns against record or field
+	$ awk '$1~/pattern1/&&$2~/pattern2/{print $0}' <file>
+	$ awk '$1~/pattern1/||$2~/pattern2/{print $0}' <file>
+	$ awk '$1~/pattern1/&&($2!~/pattern2/||$3!~/pattern3/){print $0}' <file>
 
 * compare a specific data field against a number or string
 	$ awk '$2 >= 5{print $0}' <file>

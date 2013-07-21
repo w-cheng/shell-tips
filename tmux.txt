@@ -1,0 +1,37 @@
+* show keybindings
+	Ctrl-a ?
+
+* sessions
+	tmux ls (list sessions)
+	tmux attach -t <session number> (attach to a specific session)	
+	tmux attach (attch to most detached session)
+	tmux attach -d -t <session number> (attach to a specific session and detach it elsewhere)
+	tmux kill-session -t <session number> (kill a session by its session number)
+	tmux kill-session (kill the most recent detached session)
+	Ctrl-a d (Detach current session)	
+
+* copy & paste
+	Ctrl-a [ 	(Enter copy mode)
+	Ctrl-a ] 	(Paste copied contents)
+	Ctrl-a [; v; y; Ctrl-a ]
+
+* window operations
+	Ctrl-a c 	(Create new window)
+	Ctrl-a , 	(Rename current window)
+	Ctrl-a Ctrl-a 	(Switch between last active window)
+	Ctrl-a p 	(Go to previous window)
+	Ctrl-a n 	(Go to next window)
+	Ctrl-a <number> (Switch to <number> window)
+	Ctrl-a w 	(List all windows)
+	Ctrl-d 		(Exit current window)
+	Ctrl-a [ 	(Scroll mode)
+
+* pane operations
+	Ctrl-a - 	(Split pane horizontally)
+	Ctrl-a | 	(Split pane vertically)
+	Ctrl-a o 	(Switch to another pane)
+	Ctrl-a x 	(Kill current pane)
+	Ctrl-a ! 	(Close other panes except the current one)
+	Ctrl-a Ctrl-o 	(Swap location of panes)
+	Ctrl-a q 	(Show numeric values of panes)	
+
