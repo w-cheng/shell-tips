@@ -13,6 +13,9 @@
 * Download a list of urls to disk for offline viewing
 	$ wget -N -p -k --random-wait -i <url list> -o <log file>
 
+* Get urls of a specify section of website
+	$ wget --spider --wait 2 --random-wait -nv -e robots=off -r -X /wiki/lib/exe -l inf <url>
+
 * Balance spacing of textual table
 	$ column -t <file>
 
