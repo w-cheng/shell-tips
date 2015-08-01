@@ -1,0 +1,2 @@
+* import data to mallet format, one instance per line
+	mallet import-file --input <input file> --output <mallet output>
