@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -f ~/shell-tips/$1'.txt' ]
+then
+	/usr/share/vim/vimcurrent/macros/less.sh ~/shell-tips/$1'.txt' -c "call matchadd('Title', '^\*.\+$', -1)|call matchadd('Comment', '^\t.\+$', -1)|hi Search term=bold cterm=bold ctermfg=7 ctermbg=2 gui=bold guifg=#FFFFFF guibg=#00A261"
+else
+echo "file "$1".txt doesn't exist. Available tips files:"
+ls ~/shell-tips/*.txt|egrep -o '[^/]+\.txt$'
+fi
