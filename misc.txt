@@ -1,3 +1,13 @@
+* Add user to sudoers
+        $ sudo usermod -a -G sudo <username>
+
+* Login as another user
+        $ sudo -u <username>
+
+* Change password
+        $ sudo passwd
+        $ sudo passwd <username>
+
 * Show index view of a list of images
 	$ feh -i -f <image_file_list>
 

@@ -1,0 +1,6 @@
+* Get the lines between two matching patterns
+        $ sed -n ‘/start_pattern/, /end_pattern/ p’ <text file>
+
+* Replace a specific line
+
+* 
