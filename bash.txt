@@ -1,0 +1,100 @@
+* Commandline history shortcuts
+	!! 	- Execute the last command
+	!5 	- Execute the fifth command
+	!-3 	- Counting from the reverse, execute the third command
+	!^ 	- The first argument of the last command
+	!$ 	- The last argument of the last command
+	!:3 	- The third argument of the last command (0 is the last command name)
+	!:2-4 	- The second to the fourth arguments of the last command
+	!:2- 	- The second to the (last-1) arguments of the last command
+	!:2* 	- The second to the last arguments of the last command
+	!* 	- All arguments of the last command
+	!ss 	- Execute the most recent command that starts with ss
+
+* Special parameters
+	$# 	- The number of positional arguments given to this invocation of the shell.
+	$?      - The exit status of the last command executed 
+	$$      - The process number of this shell
+	$!      - The process id of the last command run in the background.
+	$-      - The current options supplied to this invocation of the shell.
+	$*      - A string containing all the arguments to the shell, starting at $1.
+	$_   	- Last argument to the previous command. such as ‘cat hello.txt|echo $_’ will print hello.txt in the end
+	$PIPESTATUS 	- Exit status of the recent command from a pipe, such as
+	${PIPESTATUS[0]} - Refers to the first command in the "pipe command"
+	${PIPESTATUS[1]} - Rfers to the second command in the "pipe command"
+
+* Length of string
+	$ var="test"
+	$ echo ${#var} 	# output is 4
+
+* Extract substring by position and length
+	$ var="test"
+	$ echo ${var:2} 	# output is st
+	$ echo ${var:2:1} 	# output is s
+
+* Delete shortest and longest match of substring
+	$ filename="bash.string.txt"
+	$ echo ${filename#*.} 	# shortest matching from beginning, output is string.txt
+	$ echo ${filename%.*} 	# shortest matching from end, output is bash.string
+	$ echo ${filename##*.}  # longest matching from beginning, output is txt
+	$ eco ${filename%%.*} 	# longest matching from end, output is bash
+	
+* Find and replace string values
+	${string/pattern/replacement} 	# Replace only first match
+	${string//pattern/replacement} 	# Replace all the matches
+	${string/#pattern/replacement} 	# Replace beginning
+	${string/%pattern/replacement} 	# Replace end
+
+* Control structs
+	if [ expression ]
+	then
+		commands
+	elif [ expression2 ]
+	then
+		commands
+	else
+		commands
+	fi
+
+	if commands 	#if command successful
+	then
+		commands
+	fi
+
+
+	for var1 in list
+	do
+		commands
+	done
+
+
+	while [ expression ]
+	do
+		commands
+	done
+
+
+	until [ expression ]
+	do
+	commands
+	done
+
+* String comparisons
+	string1 = string2 	- string1 is equal to string2
+	string1 != string2 	- string1 is NOT equal to string2
+	string1 		- string1 is NOT NULL or not defined 
+	-n string1 		- string1 is NOT NULL and does exist
+	-z string1 		- string1 is NULL and does exist
+
+* Test file and directory
+	-s file 	- Non empty file
+	-f file 	- Is File exist or normal file and not a directory 
+	-d dir 		- Is Directory exist and not a file
+	-w file 	-Is writeable file
+	-r file 	- Is read-only file
+	-x file 	- Is file is executable
+
+* Logical operators
+	! expression 			- Logical NOT
+	expression1  -a  expression2 	- Logical AND
+	expression1  -o  expression2 	- Logical OR
