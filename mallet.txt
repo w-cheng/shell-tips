@@ -1,2 +1,13 @@
-* import data to mallet format, one instance per line
-	mallet import-file --input <input file> --output <mallet output>
+* Import data to mallet format, one instance per line (Any sequence without a space is treated as a word)
+	$ mallet import-file --input <input file> --output <mallet output> --token-regex '[^\s]+'
+
+* Train a Maximum Entropy Classifier
+	$ mallet train-classifier --input <training file in mallet format> --output-classifier <classifier file> --trainer MaxEnt
+
+* Classify unseen data (one instance per line) with a classifier
+	$ mallet classify-file --input <input file> --output - --classifier <classifier file>
+
+* Run 10-fold cross validation with a Maximum Entropy classifier
+	$ mallet train-classifier --input <input file> --cross-validation 10 --trainer MaxEnt --report test:accuracy
+
+* 
