@@ -30,10 +30,13 @@
 	$ column -t <file>
 
 * Split a file by N lines
-	$ split -d -l 10 <file> <output file prefix># split file by 10 lines, the output file will be called prefix01, prefix02...
+	$ split -d -l 10 <file> <output file prefix> # split file by 10 lines, the output file will be called prefix01, prefix02...
 
 * Resize an image to not exceed specified size, shrink if necessary
-	$ convert <image file> -resize ‘widthxheight>’ <resized image file>
+	$ convert <image file> -resize 'widthxheight>' <resized image file>
+
+* Resize an image to a percentage of original size, keep aspect ratio
+	$ convert <image file> -resize <percent> <resized image file>
 
 * Change image format
 	$ convert <image.jpg> <image.png>
