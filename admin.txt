@@ -7,3 +7,28 @@
 * pip upgrade an already installed package to the latest from PyPI
 	$ pip install --upgrade package
 
+* add new user on ubuntu
+	$ sudo adduser <username>
+
+* delete an user
+	$ sudo userdel <username>
+
+* add a new group
+	$ sudo groupadd <groupname>
+
+* delete a group
+	$ sudo groupdel <groupname>
+
+* add user to a group
+	$ sudo usermod -a -G <groupname> <username>
+
+* remove user from a group (by re-adding user to the intended group)
+	$ sudo usermod -G <groupname,...> <username>
+
+* change password for an user
+	$ sudo passwd <username>
+
+* change user's primary/default group
+	$ sudo usermode -g <groupname> <username>
+
+
