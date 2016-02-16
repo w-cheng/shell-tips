@@ -20,3 +20,39 @@
 	$ find <path>/<repository> -type d -exec chmod g+s '{}' \;
 	$ cd <path>/<repository>
 	$ git config core.sharedRepository group
+
+* git ancestry references
+
+	Example history:
+	-> [HEAD] 734713b fixed refs handling, added gc auto, updated tests
+	->   d921970 Merge commit 'phedders/rdocs'
+	|\
+	| -> 35cfb2b Some rdoc changes
+	-> | 1c002dd added some blame and merge stuff
+	|/
+	-> 1c36188 ignore *.gem
+	-> 9b29157 add open3_detach to gemspec file list
+
+	<commit>^ means the parent of <commit>
+	HEAD^ means the parent commit of HEAD
+	
+	$ git show HEAD^
+		commit d921970
+
+	<commit>^<n> means the nth parent of <commit>, this is only useful at merge commit
+	
+	$ git show d921970^ # Shows the first parent commit
+		commit 1c002dd
+
+	$ git show d921970^2 # Shows the second parent commit
+		commit 35cfb2b
+
+	<commit>~ is same as <commit>^ but <commit>~<n> means the nth ancestor of <commit>
+
+	$ git show HEAD~3
+		commit 1c36188
+
+	The two can also be combined:
+	
+	$ git show HEAD~^2
+		commit 35cfb2b
