@@ -1,11 +1,20 @@
 * pip install a specific version of package
-	$ pip install package==1.0.4
+	$ pip install <package>==1.0.4
 
 * pip install a minimum version of package
-	$ pip install package>=1.0.4
+	$ pip install <package>>=1.0.4
 
 * pip upgrade an already installed package to the latest from PyPI
-	$ pip install --upgrade package
+	$ pip install --upgrade <package>
+
+* pip install packages to user directory
+	$ pip install --user <package>
+
+* setup.py install packages to user directory
+	$ python setup.py install --user
+
+* easy_install packages to user directory
+	$ easy_install --user <package>
 
 * add new user on ubuntu
 	$ sudo adduser <username>
