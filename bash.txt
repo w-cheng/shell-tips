@@ -23,6 +23,18 @@
 	${PIPESTATUS[0]} - Refers to the first command in the "pipe command"
 	${PIPESTATUS[1]} - Rfers to the second command in the "pipe command"
 
+* Shell extglot option for file path matching
+	$ shopt -s extglob # enable extglob option
+	$ shopt -u extglob # disable extglob option
+
+	$ ?(pattern-list)	- Matches zero or one occurrence of the given patterns
+	$ *(pattern-list)	- Matches zero or more occurrences of the given patterns
+	$ +(pattern-list)	- Matches one or more occurrences of the given patterns
+	$ @(pattern-list)	- Matches one of the given patterns
+	$ !(pattern-list)	- Matches anything except one of the given patterns
+
+	$ mv !(*music*) music # move everything exception music to music directory
+
 * Length of string
 	$ var="test"
 	$ echo ${#var} 	# output is 4
