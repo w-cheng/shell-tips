@@ -28,6 +28,14 @@
 
 * Balance spacing of textual table
 	$ column -t <file>
+	$ column -t -s $'\t' <file> # balance columns separated by tab
+	$ column -nt -s $'\t' <file> # balance columns separated by tab and also have empty cells, only works on debian release though
+
+* Turn off text wrapping in less
+	$ less -S <file>
+
+* Print tab and newline characters
+	$ cat -vet <file>
 
 * Split a file by N lines
 	$ split -d -l 10 <file> <output file prefix> # split file by 10 lines, the output file will be called prefix01, prefix02...
