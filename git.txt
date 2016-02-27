@@ -21,6 +21,13 @@
 	$ cd <path>/<repository>
 	$ git config core.sharedRepository group
 
+* make new branch
+	$ git branch <new branch name>
+	$ git checkout -b <new branch name> # create a new branch and check it out
+
+* push local branch to remote repository
+	$ git push origin <local branch>
+
 * git ancestry references
 
 	Example history:
