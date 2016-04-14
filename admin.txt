@@ -16,6 +16,17 @@
 * easy_install packages to user directory
 	$ easy_install --user <package>
 
+* print python module loading path
+	$ python -m site
+	$ python -c 'import sys;print sys.path'
+
+* change python module loading path
+	1. Set the PYTHONPATH environment variable.
+	2. Create .pth files and dropping them where Python scans for packages
+	3. Programmatically, by importing sys and then appending or prepending to sys.path
+		import sys
+		sys.path.insert(0, '/this/path/will/be/considered/first')
+	
 * add new user on ubuntu
 	$ sudo adduser <username>
 

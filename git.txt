@@ -25,6 +25,18 @@
 	$ git branch <new branch name>
 	$ git checkout -b <new branch name> # create a new branch and check it out
 
+* delete a local branch
+	$ git branch -d <branch name>
+
+* revert a git merge
+	$ git reset --hard <commit number>
+
+* checkout a specific file from another branch
+	$ git checkout <branch name> <path/to/file>
+
+* remove a file from staged area
+	$ git reset HEAD <path/to/file>
+
 * push local branch to remote repository
 	$ git push origin <local branch>
 

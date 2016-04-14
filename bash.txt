@@ -35,6 +35,9 @@
 
 	$ mv !(*music*) music # move everything exception music to music directory
 
+* Generate a random number up to N
+	$ echo $[RANDOM%N+1] # N=the highest number you want to generate
+
 * Length of string
 	$ var="test"
 	$ echo ${#var} 	# output is 4
