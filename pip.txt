@@ -1,0 +1,9 @@
+* pip install a specific version of package
+	$ pip install package==1.0.4
+
+* pip install a minimum version of package
+	$ pip install package>=1.0.4
+
+* pip upgrade an already installed package to the latest from PyPI
+	$ pip install --upgrade package
+
