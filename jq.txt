@@ -1,0 +1,46 @@
+* extract value of a key
+	Input: {"foo": 42, "bar": "less interesting data"}
+	$ jq '.foo'
+	Output: 42
+
+* extract value of array based on index
+	Input: [{"name":"JSON", "good":true}, {"name":"XML", "good":false}]
+	$ jq '.[0]'
+	{"name":"JSON", "good":true}'
+
+	Input: ["a","b","c","d","e"]
+	$ jq '.[2:4]'
+	Output: ["c", "d"]
+
+	Input: [1,2,3]
+	$ jq '.[]'
+	Output: 1
+		2
+		3
+
+* run multiple filters at the same time
+	Input: {"foo": 42, "bar": "something else", "baz": true}
+	$ jq '.foo, .bar'
+	Output: 42
+		"something else"
+
+* construct new array
+	Input: {"user":"stedolan", "projects": ["jq", "wikiflow"]}
+	$ jq '[.user, .projects[]]'
+	Output: ["stedolan", "jq", "wikiflow"]
+
+* construct new dictionary object
+	Input: {"user":"stedolan","titles":["JQ Primer", "More JQ"]}
+	$ jq '{user, title: .titles[]}'
+	Output: {"user":"stedolan", "title": "JQ Primer"}
+		{"user":"stedolan", "title": "More JQ"}
+
+	Input: {"user":"stedolan","titles":["JQ Primer", "More JQ"]}
+	$ jq '{(.user): .titles}'
+	Output: {"stedolan": ["JQ Primer", "More JQ"]}
+
+* select/extract based on conditions
+	Input: [{"id": "first", "val": 1}, {"id": "second", "val": 2}]
+	$ jq '.[] | select(.id == "second")'
+	Output: {"id": "second", "val": 2}
+	
