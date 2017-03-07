@@ -1,0 +1,33 @@
+* Create a new environment
+	$ conda create -n <env name> [package1] [package2] [...]
+	$ conda create -n test # create an empty environment with only python
+	$ conda create -n test pandas seaborn # create an empty environment with pandas and seaborn
+	$ conda activate/deactivate <env name> # activate/deactivate the specified environment
+	$ conda env create -f environment.yml # create an environment from a environment.yml file
+* List all environments
+	$ conda info -e
+
+* Clone an environment
+	$ conda create -n <env 1> --clone <env 2>
+
+* Remove an environment
+	$ conda remove -n <env name> --all
+
+* Conda environment yaml file example
+
+name: test-me-simple
+dependencies:
+  - numpy
+  - pandas
+
+name: test-me-complex
+dependencies:
+  - python=3.4   # or 2.7
+  - bokeh=0.9.2
+  - numpy=1.9.*
+  - nodejs=0.10.*
+  - flask
+  - pip:
+    - Flask-Testing 
+
+* 
