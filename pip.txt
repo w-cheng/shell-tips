@@ -7,3 +7,17 @@
 * pip upgrade an already installed package to the latest from PyPI
 	$ pip install --upgrade package
 
+* create a virtual environment
+	$ virtualenv <env directory> # create a python environment in <env directory>
+
+* use a specific version of python in your environment
+	$ virtualenv -p /usr/bin/python2.7 <env directory>
+
+* activate virtual environment
+	$ source <env directory>/bin/activate 
+
+* install packages in requirement file once virtual environment is activated
+	$ pip install -r requirements.txt
+
+* deactivate virtual environment
+	$ deactivate
