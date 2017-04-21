@@ -78,4 +78,5 @@
 * Get the lines between two matching patterns
 	$ sed -n ‘/start_pattern/, /end_pattern/ p’ <text file>
 
-
+* Copy n random files from a directory
+	$ ls <dir>|sort -R|head -n <n files>|while read f;cp $f <target dir>;done
