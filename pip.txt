@@ -21,3 +21,6 @@
 
 * deactivate virtual environment
 	$ deactivate
+
+* show list of installed packages
+	$ pip list
