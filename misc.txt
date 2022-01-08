@@ -16,6 +16,9 @@
 
 * Mirror a local directory
 	$ rsync -avz --delete <src dir> <dest dir>
+	# remove --delete option if you don't want to remove extra files in <dest dir>
+	# consider --update option to skip updatting files that are newer in <dest dir>
+	# if unsure, using --dry-run to test before the sync
 
 * Extract information using XPath
 	$ xidel <file|url> -e '//a/@href'url# extract all links of a html page
