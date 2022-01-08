@@ -1,0 +1,5 @@
+* create a named aws profile
+	$ aws configure --profile <profile name>
+
+* sync a s3 target directory with source. Recursively copies new and updated files from the source to the target.
+	$ aws s3 sync <source> <target>
